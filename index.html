@@ -14,17 +14,26 @@
     <main>
 
         <!-- Div pour append l'image et les infos du pokemon -->
-        <div class="display-pokemon-infos"></div>
+        <div class="display-pokemon-line">
+            <div class="single-pokemon">
+                <p>24</p>
+                <p>Herbizarre</p>
+                <p>Icone</p>
+            </div>
+            
+        </div>
         
         <!-- Section pour les div qui seront ajoutées avec nom du pokémon/id/icône du pokemon
         en bout de div -->
         <div class="first-column">
             <div class="search-form">
-                <i class='fas fa-search' style='font-size:36px;color:white'></i>
-                <input class="search-bar">
+                <button class="submit">
+                    <i class='fas fa-search' style='font-size:36px;color:white'></i>
+                </button>
+                <input class="search-bar" type="text">
             </div>
 
-            <div class="pokemon">
+            <div class="display-pokemon-infos">
                 <img src="https://www.shutterstock.com/image-photo/motion-blurred-sunset-phot-waves-260nw-1186068148.jpg" alt="">
             </div>
 
@@ -43,9 +52,35 @@
 
     </main>
 
-    <template>
-        <div><!-----></div>
+    <template class="pokemon-line-template">
+        <div class="pokemon-line">
+            <div>
+                <p></p>
+                <p></p>
+                <img alt="pokemon-icon">
+            </div>
+        </div>
+
     </template>
+
+    <template class="pokemon-card-template">
+
+        <div class="pokemon-card">
+
+            <p>Pokemon ID</p>
+            <img src="image_pokemon">
+            <h3 class="pokemon-name"></h3>
+            <p class="types">Types</p>
+
+            <div class="elements-icons">
+                <img>
+                <img>
+            </div>
+
+        </div>
+
+    </template>
+
     <script src="script.js"></script>
 </body>
 </html>

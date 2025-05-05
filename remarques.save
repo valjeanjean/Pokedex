@@ -1,0 +1,31 @@
+Pour évoli, faire attention car il a 5 évolutions, il faut donc récupérer 
+le tableau d'évolution de celui-ci, et faire un forEach 
+pour afficher chaque évolution 
+Faire un addeventlistener sur les pokémons de gauche, pour que
+lorsqu'on clique, il est affiché dans la colonne de droite en bas
+ses évolutions si il en a.
+Récupérer l'image du pokemon, mettre un h3 en dessous avec le nom du 
+pokemon, puis une balise p avec "Types", puis une div en display flex
+avec les 2 types correspondants, soit :
+
+<div class="pokemon">
+    <p>Pokemon ID</p>
+    <img src"image_pokemon">
+    <h3 class="pokemon-name"></h3>
+    <p class="types">Types</p>
+    <div class="elements-icons">
+        <img>
+        <img>
+    </div>
+</div>
+
+.elements-icons{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+Il faut append la template pokemon-line-template sur la div "display-pokemon-line"
+Il faut append la template pokemon-card-template sur la div "display-pokemon-infos"
