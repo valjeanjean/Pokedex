@@ -9,9 +9,23 @@ function searchPokemon(){
 }
 
 /* Fonction pour assigner les valeurs/cloner la div correspondante au pokémon cliqué */
-function pokemonEvolutionLineComponent(){
+async function pokemonEvolutionLineComponent(currentPokemon){
+
+    const pokemon = await fetch("https://pokebuildapi.fr/api/v1/pokemon/" + currentPokemon.apiEvolutions[0].id);
+
+    const evolutionPokemonAddLine = PokemonLineComponent(pokemon);
+    const evolutionPokemonContainer = document.querySelector(".evolution-display");
+    if(evolutionPokemonContainer == null){
+        
+        throw Error("Erreur lors de la récupération de la classe evolution-display");
+    }
+    
+    evolutionPokemonContainer.appendChild(evolutionPokemonAddLine);
+
 
 }
+
+
 
 /* Fonction d'assignations de valeurs pour la création d'une nouvelle div qui contiendra les infos du pokemon */
 function PokemonLineComponent(pokemon){
@@ -19,6 +33,11 @@ function PokemonLineComponent(pokemon){
     const pokemonName = pokemon.name;
     const pokemonID = pokemon.id;
     const lineTemplate = document.querySelector(".pokemon-line-template");
+    if(lineTemplate == null){
+
+        throw Error("Erreur lors de la récupération de la class pokemon-line-template");
+    }
+
     const newPokemonLine = lineTemplate.content.cloneNode(true);
     const pokemonDescriptions = newPokemonLine.querySelectorAll("p");
     const pokemonIcon = newPokemonLine.querySelector("img");
@@ -30,7 +49,6 @@ function PokemonLineComponent(pokemon){
 
     elementPokemon.addEventListener("click", ()=>{
         
-        console.log("clique effectué");
         pokemonCardComponent(pokemon);
         
     });
@@ -43,6 +61,10 @@ function PokemonLineComponent(pokemon){
 function pokemonCardComponent(pokemon){
     
     const cardTemplate = document.querySelector(".pokemon-card-template");
+    if(cardTemplate == null){
+
+        throw Error("Erreur lors de la récupération de la classe pokemon-card-template");
+    }
     const newPokemonCard = cardTemplate.content.cloneNode(true);
     
     const pokemonID = newPokemonCard.querySelector("p");
@@ -63,7 +85,12 @@ function pokemonCardComponent(pokemon){
     });
 
     const pokemonCardContainer = document.querySelector(".display-pokemon-infos");
-    pokemonCardContainer?.innerHTML = "";
+    if(pokemonCardContainer == null){
+
+        throw Error("Erreur lors de la récupération de la classe display-pokemon-infos");
+    }
+
+    pokemonCardContainer.innerHTML = "";
     pokemonCardContainer.appendChild(newPokemonCard);
     
 }
@@ -78,6 +105,13 @@ function displayPokemonLines() {
             const newPokemonLine = PokemonLineComponent(pokemon);
             const pokemonLinesContainer = document.querySelector(".display-pokemon-line");
             pokemonLinesContainer.appendChild(newPokemonLine);
+
+            const evolContainer = document.querySelector(".evolution-display");
+
+            
+            const newPokemonLine2 = PokemonLineComponent(pokemon);
+
+            evolContainer?.appendChild(newPokemonLine2)
         });
     });
 }

@@ -4,13 +4,6 @@
 }
 
 
-{
-
-    border: 1px solid blue;
-}
-
-
-
 body{
 
     background-color: #EF3E3E;
@@ -101,6 +94,7 @@ h2{
     height: 70px;
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    padding-left: 10px;
 }
 
 .evolution-display h2{

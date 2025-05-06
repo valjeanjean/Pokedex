@@ -27,5 +27,7 @@ avec les 2 types correspondants, soit :
     text-align: center;
 }
 
-Il faut append la template pokemon-line-template sur la div "display-pokemon-line"
-Il faut append la template pokemon-card-template sur la div "display-pokemon-infos"
+recréer les div onload vide, dès le fetch,
+
+Manque la div en bas de pokemon-card-container qui montre l'évolution du pokemon sélectionner
+à gauche si il en a
