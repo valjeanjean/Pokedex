@@ -69,7 +69,7 @@ h2{
     background-color: #B62F2F;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     border: 1px solid #ccc;
-    color: beige;
+    color: white;
     font-size: 1.5em;
     font-weight: bold;
 }
@@ -95,6 +95,7 @@ h2{
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     padding-left: 10px;
+    padding-right: 10px;
 }
 
 .evolution-display h2{
@@ -149,6 +150,7 @@ h2{
     /* cursor:pointer; fonctionnera lorsque j'ajouterai la classe 
        lors de la création des balises avec template et le setattribute
     */ 
+    height: 20%;
 }
 
 .display-pokemon-infos{
